@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Profile</title>
+</head>
+<body>
+<h2> @{{ user.screen_name }} </h2>
+<form action="{{ url_for('search_results') }}">
+    <label for="q">Twitter Search</label>
+    <input type="text" name="q" id="q" placeholder="Enter your twitter search">
+    <button type="submit">Search</button>
+
+</form>
+</body>
+</html>
