@@ -1,3 +1,15 @@
 .list-group{
     margin-top: 1rem;
 }
+
+.center{
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+
+h1{
+    font-size: 2.5rem;
+}
+

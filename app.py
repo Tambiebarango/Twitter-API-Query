@@ -44,7 +44,7 @@ def twitter_auth():
                     None)
         user.save_to_db()
 
-    session['screen_name'] = g.user.screen_name
+    session['screen_name'] = user.screen_name
     return redirect(url_for('profile'))
 
 
@@ -66,7 +66,7 @@ def search_results():
         label = json_response['label']
         tweet['label'] = label
 
-    return render_template('search.html', content=tweet_texts)
+    return render_template('search.html', content=tweet_texts, query=user_query)
 
 
-app.run(port=4995)
+app.run(port=4995, debug=True)

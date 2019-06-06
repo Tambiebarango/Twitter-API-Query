@@ -13,6 +13,7 @@ def get_request_token():
     # check if response is valid
     if response.status != 200:
         print("Error while requesting request token!")
+
     request_token = dict(urlparse.parse_qsl(content.decode('utf-8')))
     return request_token
 

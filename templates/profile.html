@@ -2,14 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap" rel="stylesheet">
     <title>User Profile</title>
 </head>
+<style>
+body {
+  background-color: rgb(244, 194, 66);
+  margin: auto;
+  width: 60%;
+  border: 20px;
+  padding: 200px;
+}
+</style>
 <body>
-<h2> @{{ user.screen_name }} </h2>
-<form action="{{ url_for('search_results') }}">
-    <label for="q">Twitter Search</label>
-    <input type="text" name="q" id="q" placeholder="Enter your twitter search">
-    <button type="submit">Search</button>
+<h1><strong>Welcome @{{ user.screen_name }} </strong> </h1>
+<p>To perform a search, enter a keyword or keywords in the form below. E.g. "Hazard"</p>
+
+<form action="{{ url_for('search_results') }}" class="form-inline my-2 my-lg-0">
+    <label for="q">Keyword         </label>
+    <input name="q" if="q" class="form-control mr-sm-2" type="search" placeholder="Enter your keyword">
+    <button class="btn-inline btn-primary my-2 my-sm-0" type="submit">Search</button>
+    </form>
+
 
 </form>
 </body>
